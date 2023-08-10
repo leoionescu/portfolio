@@ -4,7 +4,12 @@ import ReactLinkify from "react-linkify";
 
 const Card = ({ time, title, text, technologies, classProps }) => {
   const { ref, inView } = useInView({});
-  const lines = text.split("\\n");
+  let lines;
+  if (text) {
+    lines = text.split("\\n");
+  } else {
+    lines = [];
+  }
   return (
     <div
       ref={ref}
