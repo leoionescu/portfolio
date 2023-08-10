@@ -1,66 +1,103 @@
-import { useState, useEffect } from "react";
-import { HiMenuAlt4 } from "react-icons/hi";
-import Image from "next/image";
-import { AiOutlineClose } from "react-icons/ai";
-
-import logo from "../../public/images/logo2.png";
+import { useState } from "react";
+import { Link, ScrollLink } from "react-scroll";
+import AnimatedText from "./AnimatedText";
 
 const NavBarItem = ({ title, classProps }) => {
-  return <li className={`mx-4 cursor-pointer ${classProps}`}>{title}</li>;
+  //   return <li className={`${classProps}`}>{title}</li>;
+  return (
+    <Link to={title} smooth={true} duration={500} spy={true} offset={-64}>
+      {
+        <AnimatedText
+          classProps={classProps}
+          text={title}
+          animation="show-right"
+        ></AnimatedText>
+      }
+    </Link>
+  );
 };
 
 const NavBar = () => {
-  const [toggleMenu, setToggleMenu] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
+
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
+  };
 
   return (
-    <nav className="w-full flex md:justify-center justify-between items-center py-4">
-      <div className="md:flex-[0.5] flex-initial justify-center items-center">
-        <div className="cursor-pointer">
-          {/* <Image src={logo} width={80} height={80}alt="logo"  /> */}
-          <h1 className="text-white font-mono font-semibold text-xl">Leo.</h1>
-        </div>
+    <nav>
+      <div className="w-full flex justify-between items-center py-4 hidden sm:flex">
+        <Link
+          to="About Me"
+          smooth={true}
+          duration={500}
+          spy={true}
+          offset={-64}
+        >
+          <AnimatedText
+            classProps=" bg-main text-white font-mono font-semibold cursor-pointer md:text-xl lg:text-3xl"
+            text="Leo Ionescu."
+            animation="show-right"
+          ></AnimatedText>
+        </Link>
+
+        <ul className="flex list-none flex-row justify-betweens flex-initial">
+          {["About Me", "Skills", "Education", "Experience", "Portfolio"].map(
+            (item, index) => (
+              <NavBarItem
+                key={item + index}
+                title={item}
+                classProps={`text-white font-mono font-semibold hover:text-accent cursor-pointer lg:text-lg lg:pt-4 mx-4 delay-${index}`}
+              />
+            )
+          )}
+        </ul>
       </div>
-      <ul className=" md:flex hidden list-none flex-row justify-between flex-initial">
-        {["About Me", "Skills", "Education", "Portfolio", "Contact"].map(
-          (item, index) => (
-            <NavBarItem
-              key={item + index}
-              title={item}
-              classProps="text-white font-mono font-semibold hover:text-blue-400"
+      <div className="-mr-2 flex md:hidden justify-between items-center">
+        {/* Hamburger menu icon */}
+        <Link
+          to="About Me"
+          smooth={true}
+          duration={500}
+          spy={true}
+          offset={-64}
+        >
+          <AnimatedText
+            classProps=" bg-main text-white font-mono font-semibold cursor-pointer md:text-xl lg:text-3xl"
+            text="Leo Ionescu."
+            animation="show-right"
+          ></AnimatedText>
+        </Link>
+        <button
+          onClick={toggleMenu}
+          className="inline-flex items-center justify-center p-2 rounded-md text-white"
+        >
+          <svg
+            className="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            aria-hidden="true"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M4 6h16M4 12h16m-7 6h7"
             />
-          )
-        )}
-      </ul>
-      <div className="flex relative">
-        {toggleMenu ? (
-          <AiOutlineClose
-            fontSize={28}
-            className="text-white md:hidden cursor-pointer"
-            onClick={() => setToggleMenu(false)}
+          </svg>
+        </button>
+      </div>
+      {/* Burger menu items */}
+
+      <div className={showMenu ? " md:hidden pb-2" : "hidden "}>
+        {["About Me", "Skills", "Education", "Portfolio"].map((item, index) => (
+          <NavBarItem
+            key={item + index}
+            title={item}
+            classProps={`text-white font-mono font-semibold hover:text-accent cursor-pointer lg:text-lg lg:pt-4 delay-0`}
           />
-        ) : (
-          <HiMenuAlt4
-            fontSize={28}
-            className="text-white md:hidden cursor-pointer"
-            onClick={() => setToggleMenu(true)}
-          />
-        )}
-        {toggleMenu && (
-          <ul className="z-10 fixed top-0 -right-2 p-3 w-[70vw] h-screen shadow-2xl md:hidden list-none flex flex-col justify-start items-end rounded-md blue-glassmorphism text-white animatee-slide-in">
-            <li className="text-xl w-full my-2">
-              <AiOutlineClose onClick={() => setToggleMenu(false)} />
-            </li>
-            {["Market", "Exchange", "Tutorials", "Wallet"].map(
-              (item, index) => (
-                <NavBarItem
-                  key={item + index}
-                  title={item}
-                  classProps="my-2 text-lg"
-                />
-              )
-            )}
-          </ul>
-        )}
+        ))}
       </div>
     </nav>
   );

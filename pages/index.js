@@ -6,21 +6,35 @@ import Header from "./components/Header";
 import AboutMe from "./components/AboutMe";
 import Skills from "./components/Skills";
 import Education from "./components/Education";
+import Experience from "./components/Experience";
 import Portfolio from "./components/Portfolio";
 import Contact from "./components/Contact";
+import { Element } from "react-scroll";
 
 export default function Home() {
   return (
-    <div className="h-screen flex flex-col bg-main">
-      <div className="">
-        <Header />
-      </div>
-      <div className="flex-1 overflow-y-auto">
-        <AboutMe />
-        <Skills />
-        <Education />
-        <Portfolio />
-        <Contact />
+    <div className="w-full bg-main overflow-x-hidden">
+      <Header />
+      <div className="flex flex-col ">
+        <div className="">
+          <Element id="About Me">
+            <AboutMe />
+          </Element>
+          <Element id="Skills">
+            <Skills />
+          </Element>
+          <Element id="Education">
+            <Education />
+          </Element>
+          <Element id="Experience">
+            <Experience />
+          </Element>
+          <Element id="Portfolio">
+            <Portfolio />
+          </Element>
+
+          {/* <Contact /> */}
+        </div>
       </div>
     </div>
   );
