@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import poza from "../../public/images/poza.jpg";
+import poza from "../../public/images/poza2.jpg";
 import AnimatedText from "./AnimatedText";
 import { useInView } from "react-intersection-observer";
 import { AiFillGithub } from "react-icons/ai";
