@@ -44,7 +44,7 @@ const Education = () => {
             ◦ Windows App Development\n
             ◦ Software Quality and Testing\n
             ◦ Databases\n
-            Field of study: Business Informatics\n
+            Field of study: Economic Informatics\n
             Thesis: The Development of a Business Video Conference Application\n
             Final Grade: 10 out of 10\n"
           ></Card>
