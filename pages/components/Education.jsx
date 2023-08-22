@@ -31,7 +31,7 @@ const Education = () => {
           <Card
             classProps="opacity-0 slide-left w-full"
             time="10/2019 – 07/2022 – Bucharest, Romania"
-            title="BACHELOR OF ECONOMIC INFORMATICS – Academy of Economic Studies - Faculty of Cybernetics, Statistics and  Economic Informatics"
+            title="Bachelor of Economic Informatics – Academy of Economic Studies - Faculty of Cybernetics, Statistics and  Economic Informatics"
             technologies="C\C++ Java JavaScript C# SQL Linux React Node.js JUnit Android"
             text="Studied Subjects:\n
             ◦ Object-Oriented Programming\n

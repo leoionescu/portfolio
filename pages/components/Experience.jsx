@@ -48,7 +48,7 @@ const Experience = () => {
           <Card
             classProps="opacity-0 slide-right w-full"
             time="10/2019 – 07/2022 – Bucharest, Romania"
-            title="VOLUNTEER – SISC (FACULTY OF CYBERNETICS STUDENTS UNION)"
+            title="Volunteer – SISC (Faculty of Cibernetics Student Union)"
             text="Main Responsibilities:\n
             ◦ Working within the PR department of the association\n
             ◦ Participating to the association board meetings, planning future events and campaigns and dividing tasks\n
