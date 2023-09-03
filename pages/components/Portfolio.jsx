@@ -63,6 +63,16 @@ const Portfolio = () => {
           ></Card>
           <Card
             classProps="opacity-0 slide-right w-full"
+            time="2018"
+            title="Taka's Adventure"
+            technologies="Java Greenfoot"
+            text="This is a 2D platformer game, built in Java using Greenfoot, where you will help Taka collect all the diamonds and get home, while
+            surviving the angry skeletons that attack him every time he gets near them.\n
+            Github repository: https://github.com/leoionescu/Taka-s-Adventure\n
+            Live Demo available at: https://www.greenfoot.org/scenarios/29255"
+          ></Card>
+          <Card
+            classProps="opacity-0 slide-right w-full"
             time="2021"
             title="JavaScriptMusicPlayer"
             technologies="JavaScript HTML CSS"
@@ -80,16 +90,6 @@ const Portfolio = () => {
             Github repository: https://github.com/leoionescu/ChartsForEuropeanCountries\n
             Live Demo available at: https://goofy-jang-dae835.netlify.app\n
             The app fetches data from: https://ec.europa.eu/eurostat\n"
-          ></Card>
-          <Card
-            classProps="opacity-0 slide-right w-full"
-            time="2018"
-            title="Taka's Adventure"
-            technologies="Java Greenfoot"
-            text="This is a 2D platformer game, built in Java using Greenfoot, where you will help Taka collect all the diamonds and get home, while
-            surviving the angry skeletons that attack him every time he gets near them.\n
-            Github repository: https://github.com/leoionescu/Taka-s-Adventure\n
-            Live Demo available at: https://www.greenfoot.org/scenarios/29255"
           ></Card>
         </div>
       </div>

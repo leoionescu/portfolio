@@ -14,6 +14,9 @@ import { Element } from "react-scroll";
 export default function Home() {
   return (
     <div className="w-full bg-main overflow-x-hidden">
+      <Head>
+        <title>Leo Ionescu</title>
+      </Head>
       <Header />
       <div className="flex flex-col ">
         <div className="">
