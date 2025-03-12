@@ -63,7 +63,7 @@ const AboutMe = () => {
         </div>
         <AnimatedText
           classProps="bg-main text-white font-mono text-xl mt-8 hidden lg:block"
-          text="I am currently a student in my third semester of the Master of Computer Science program at the University of Vienna. My educational experiences, both within and beyond the classroom, have nurtured my analytical thinking, problem-solving skills, and a profound understanding of various programming languages and concepts."
+          text="I am currently a student of the Master of Computer Science program at the University of Vienna. My educational experiences, both within and beyond the classroom, have nurtured my analytical thinking, problem-solving skills, and a profound understanding of various programming languages and concepts."
           animation="slide-right"
         ></AnimatedText>
         <div className="flex gap-4 hidden lg:flex opacity-0 slide-up items-center justify-between">
